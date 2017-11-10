@@ -650,6 +650,13 @@ RUN if [ ${INSTALL_DUSK_DEPS} = true ]; then \
   && rm chromedriver_linux64.zip \
 ;fi
 
+#--------------------------------------------------------------------------
+# mysql-client
+#--------------------------------------------------------------------------
+USER root
+RUN apt-get update && \
+    apt-get install -y mysql-client
+
 #
 #--------------------------------------------------------------------------
 # Final Touch
